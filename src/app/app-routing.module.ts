@@ -27,7 +27,9 @@ const routes: Routes = [
   {
     path: 'add-post-modal',
     loadChildren: () => import('./addpost-modal/addpost-modal.module').then( m => m.AddPostModalPageModule)
-  }
+  },
+
+
 
 ];
 

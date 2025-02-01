@@ -19,6 +19,7 @@ export class MenuPage implements OnInit {
 
   ngOnInit() {
   }
+
   closeMenu(){
     this.menu.close();
   }
@@ -26,7 +27,18 @@ export class MenuPage implements OnInit {
   log_out(){
     this.storage.remove("isUserLoggedIn");
     this.navCtrl.navigateRoot("/login");
+  }
 
-
-}
+  account() {
+    this.navCtrl.navigateRoot("/account");
+  }
+  perfil(){
+    this.navCtrl.navigateForward("/menu/account");
+  }
+  home(){
+    this.navCtrl.navigateForward("/menu/home");
+  }
+  buscar(){
+    this.navCtrl.navigateForward("/menu/search-users");
+  }
 }
