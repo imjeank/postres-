@@ -40,9 +40,9 @@ export class AuthService {
             reject('error al intentar iniciar sesión');
           }
         }
-     
+
         )
-      
+
     });
   }
   register(data:any){
@@ -55,7 +55,7 @@ export class AuthService {
           "name":data.name,
           "last_name":data.last_name,
           "username":data.username
-          
+
         }
       }
       this.http.post(`${this.urlServer}/signup`, params, this.httpHeaders).subscribe(
@@ -70,14 +70,14 @@ export class AuthService {
         (error)=>{
           console.log(error);
           if(error.status==422){
-            reject(error.error.error);
+            reject('error');
           }else if(error.status==500){
             reject('Error por favor intente más tarde');
           }else{
             reject('error al intentar registrarse');
           }
         }
-     
+
         )
       });
   }

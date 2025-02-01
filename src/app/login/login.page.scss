@@ -1,0 +1,149 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --text-light: #ecf0f1;
+    --text-dark: #2c3e50;
+    --gradient-bg: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  }
+  
+  ion-content {
+    --background: #f8f9fa;
+  }
+  
+  swiper-container {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  swiper-slide {
+    transition: all 0.3s ease;
+    padding: 2rem;
+  }
+  
+  /* Estilos únicos para cada slide */
+  .bg-color-slide {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  }
+  
+  .bg-color-slide2 {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  }
+  
+  .bg-color-slide3 {
+    background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+  }
+  
+  .bg-color-slide4 {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  }
+  
+  h1 {
+    color: var(--text-dark);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    color: var(--text-dark);
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+  }
+  
+  img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+  }
+  
+  img:hover {
+    transform: scale(1.02);
+  }
+  
+  ion-button {
+    --background: var(--text-dark);
+    --background-hover: var(--accent-color);
+    --color: var(--text-light);
+    --border-radius: 25px;
+    --padding-start: 2rem;
+    --padding-end: 2rem;
+    margin-top: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+  
+  ion-button:hover {
+    --background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .close-icon {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 10;
+  }
+  
+  .close-icon:hover {
+    transform: rotate(90deg);
+  }
+  
+  ion-icon {
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  ion-icon:hover {
+    color: var(--accent-color);
+  }
+  
+  /* Estilo para la paginación */
+  swiper-container::part(pagination) {
+    bottom: 2rem;
+  }
+  
+  swiper-container::part(bullet) {
+    background: var(--text-dark);
+    opacity: 0.5;
+    width: 10px;
+    height: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  swiper-container::part(bullet-active) {
+    background: var(--accent-color);
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  
+  /* Animación para elementos al cargar */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  h1, h2, img, ion-button {
+    animation: fadeIn 0.8s ease-out forwards;
+  }

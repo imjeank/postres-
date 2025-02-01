@@ -23,3 +23,8 @@ swiper-slide{
   margin: 0 auto;
   display: block;
 }
+ion-fab{
+  ion-fab-button{
+    --background: red;
+  }
+}

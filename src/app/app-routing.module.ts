@@ -23,7 +23,12 @@ const routes: Routes = [
   {
     path: 'menu',
     loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule), canActivate: [LoginGuard, IntroGuard]
+   },
+  {
+    path: 'add-post-modal',
+    loadChildren: () => import('./addpost-modal/addpost-modal.module').then( m => m.AddPostModalPageModule)
   }
+
 ];
 
 @NgModule({

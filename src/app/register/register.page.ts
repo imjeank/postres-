@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { last } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { NavController } from '@ionic/angular';
+import{Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -34,13 +34,14 @@ export class RegisterPage implements OnInit {
       {type:'required',message:'debes confirmar la contraseña'},
       {type:'minlength',message:'la contraseña debe tener al menos 6 caracteres'},
     ]
-   
+
   };
 
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService, 
-    private nav: NavController
+    private nav: NavController,
+    private router: Router
   ) {
     this.registerForm = this.formBuilder.group({
       email:new FormControl('', Validators.compose([
