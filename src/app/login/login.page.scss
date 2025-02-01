@@ -1,149 +1,161 @@
-:root {
-    --primary-color: #2c3e50;
-    --accent-color: #e74c3c;
-    --text-light: #ecf0f1;
-    --text-dark: #2c3e50;
-    --gradient-bg: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+/* Header Styling */
+ion-header ion-toolbar {
+  --background: #ffffff;
+  --color: #2c3e50;
+  text-align: center;
+}
+
+/* Content Container */
+ion-content {
+  --background: #f5f7fa;
+  --padding-top: 2rem;
+  --padding-start: 1.5rem;
+  --padding-end: 1.5rem;
+}
+
+/* Title Styling */
+ion-title {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* Avatar Image Container */
+figure {
+  margin: 2rem auto;
+  width: 120px;
+  height: 120px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+figure img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 0.5rem;
+}
+
+/* Form Styling */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  animation: slideUp 0.5s ease-out;
+}
+
+/* Input Fields */
+ion-item {
+  --background: transparent;
+  --border-color: #e0e0e0;
+  --border-radius: 8px;
+  --padding-start: 0;
+  margin: 1rem 0;
+}
+
+ion-input {
+  --padding-start: 1rem;
+  --placeholder-color: #999;
+  font-size: 1rem;
+}
+
+/* Error Messages */
+ion-label[color="danger"] {
+  font-size: 0.85rem;
+  margin: 0.25rem 0 1rem 1rem;
+  display: block;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Buttons */
+ion-button {
+  --background:#ff5733;
+  --background-hover: #357abd;
+  --background-activated: #357abd;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+  margin: 1rem 0;
+  height: 48px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+ion-button[disabled] {
+  --background: #cccccc;
+  --box-shadow: none;
+}
+
+ion-button[routerLink] {
+  --background: #ffffff;
+  --color:#ff5733;
+  --border-color: #ff5733;
+  --border-style: solid;
+  --border-width: 2px;
+}
+
+/* Error Message */
+p {
+  color: #dc3545;
+  text-align: center;
+  margin-top: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  ion-content {
-    --background: #f8f9fa;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  swiper-container {
-    width: 100%;
-    height: 100vh;
-  }
-  
-  swiper-slide {
-    transition: all 0.3s ease;
-    padding: 2rem;
-  }
-  
-  /* Estilos únicos para cada slide */
-  .bg-color-slide {
-    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-  }
-  
-  .bg-color-slide2 {
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-  }
-  
-  .bg-color-slide3 {
-    background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
-  }
-  
-  .bg-color-slide4 {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  }
-  
-  h1 {
-    color: var(--text-dark);
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    text-transform: capitalize;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    color: var(--text-dark);
-    font-size: 1.8rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    opacity: 0.9;
-  }
-  
-  img {
-    max-width: 90%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    object-fit: cover;
-  }
-  
-  img:hover {
-    transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  form {
+    margin: 0 1rem;
   }
   
   ion-button {
-    --background: var(--text-dark);
-    --background-hover: var(--accent-color);
-    --color: var(--text-light);
-    --border-radius: 25px;
-    --padding-start: 2rem;
-    --padding-end: 2rem;
-    margin-top: 2rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
+    height: 44px;
   }
-  
-  ion-button:hover {
-    --background: var(--accent-color);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  ion-content {
+    --background: #1a1a1a;
   }
-  
-  .close-icon {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    font-size: 2rem;
-    color: var(--text-dark);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    z-index: 10;
+
+  form {
+    background: #2c2c2c;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
-  
-  .close-icon:hover {
-    transform: rotate(90deg);
+
+  ion-item {
+    --border-color: #404040;
   }
-  
-  ion-icon {
-    font-size: 2rem;
-    color: var(--text-dark);
-    margin: 1rem;
-    transition: color 0.3s ease;
+
+  ion-title {
+    color: #ffffff;
   }
-  
-  ion-icon:hover {
-    color: var(--accent-color);
+
+  ion-button[routerLink] {
+    --background: #2c2c2c;
   }
-  
-  /* Estilo para la paginación */
-  swiper-container::part(pagination) {
-    bottom: 2rem;
-  }
-  
-  swiper-container::part(bullet) {
-    background: var(--text-dark);
-    opacity: 0.5;
-    width: 10px;
-    height: 10px;
-    transition: all 0.3s ease;
-  }
-  
-  swiper-container::part(bullet-active) {
-    background: var(--accent-color);
-    opacity: 1;
-    transform: scale(1.2);
-  }
-  
-  /* Animación para elementos al cargar */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  h1, h2, img, ion-button {
-    animation: fadeIn 0.8s ease-out forwards;
-  }
+}

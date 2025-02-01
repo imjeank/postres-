@@ -1,0 +1,147 @@
+/* Split Pane Styling */
+ion-split-pane {
+    --side-width: 280px;
+    --side-max-width: 280px;
+    --border: none;
+   }
+   
+   /* Menu Container */
+   ion-menu {
+    --background: #ffffff;
+    --box-shadow: 4px 0px 16px rgba(0, 0, 0, 0.08);
+    border-right: 1px solid #edf2f7;
+   }
+   
+   /* Menu Header */
+   ion-menu ion-header ion-toolbar {
+    --background: #ffffff;
+    --border-color: transparent;
+    --padding-start: 16px;
+    --padding-end: 16px;
+   }
+   
+   ion-menu ion-header ion-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+   }
+   
+   /* Close Button */
+   ion-menu ion-button {
+    --color: #ff5733;
+    --padding-end: 0;
+   }
+   
+   ion-menu ion-button:hover {
+    --color: #ff5733;                     
+   }
+   
+   /* Menu Items */
+   ion-menu ion-item {
+    --background: transparent;
+    --background-hover: #f8fafc;
+    --background-activated: #f1f5f9;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --min-height: 50px;
+    --border-color: transparent;
+    margin: 4px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+   }
+   
+   ion-menu ion-item:hover {
+    --background: #f8fafc;
+   }
+   
+   /* Menu Item Icons */
+   ion-menu ion-item ion-icon {
+    color: #64748b;
+    font-size: 1.4rem;
+    margin-right: 12px;
+    transition: color 0.2s ease;
+   }
+   
+   ion-menu ion-item:hover ion-icon {
+    color: #ff5733; 
+   }
+   
+   /* Menu Item Text */
+   ion-menu ion-item {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1e293b;
+   }
+   
+   /* Logout Item Special Styling */
+   ion-menu ion-content ion-item:first-child {
+    --background: #fef2f2;
+    --background-hover: #fee2e2;
+    color: #dc2626;
+   }
+   
+   ion-menu ion-content ion-item:first-child ion-icon {
+    color: #dc2626;
+   }
+   
+   /* Dark Mode Support */
+   @media (prefers-color-scheme: dark) {
+    ion-menu {
+      --background: #1a1a1a;
+      border-right: 1px solid #333;
+    }
+   
+    ion-menu ion-header ion-toolbar {
+      --background: #1a1a1a;
+    }
+   
+    ion-menu ion-header ion-title {
+      color: #e2e8f0;
+    }
+   
+    ion-menu ion-item {
+      --background-hover: #2c2c2c;
+      --background-activated: #333;
+      color: #e2e8f0;
+    }
+   
+    ion-menu ion-item ion-icon {
+      color: #94a3b8;
+    }
+   
+    ion-menu ion-content ion-item:first-child {
+      --background: #422;
+      --background-hover: #533;
+    }
+   }
+   
+   /* Responsive Design */
+   @media (max-width: 768px) {
+    ion-split-pane {
+      --side-width: 250px;
+      --side-max-width: 250px;
+    }
+   
+    ion-menu ion-item {
+      --min-height: 45px;
+      font-size: 0.95rem;
+    }
+   }
+   
+   /* Animations */
+   @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+   }
+   
+   ion-menu ion-item {
+    animation: slideIn 0.2s ease-out forwards;
+    animation-delay: calc(var(--animation-order) * 0.05s);
+   }

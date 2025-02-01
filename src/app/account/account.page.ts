@@ -4,7 +4,7 @@ import { Storage } from '@ionic/storage-angular';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import {defineCustomElements} from '@ionic/pwa-elements/loader';
 import { AlertController } from '@ionic/angular';
-import { h } from 'ionicons/dist/types/stencil-public-runtime';
+import {  } from 'ionicons/dist/types/stencil-public-runtime';
 
 defineCustomElements(window);
 
